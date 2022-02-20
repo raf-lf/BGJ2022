@@ -5,22 +5,31 @@ using Cinemachine;
 
 public class CubeMove : MonoBehaviour
 {
-    public Rigidbody rb;
-    public float speed;
+    public CharacterController controller;
+    public Transform cam;
 
-    public CinemachineVirtualCamera vCamera;
-    public float cameraSpeed;
-
-    private void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-    }
+    public float lerp;
+    public float lerpVelocity;
+    public float speed = 6f;
 
     private void Update()
     {
-        Vector3 movement = new Vector3(Input.GetAxisRaw("Vertical") * speed * Time.deltaTime, 0, 0);
+        float h = Input.GetAxisRaw("Horizontal");
+        float v = Input.GetAxisRaw("Vertical");
+        Vector3 direction = new Vector3(h, 0f, v).normalized;
 
-        rb.AddForce(movement, ForceMode.Impulse);
+        if(direction.magnitude >= 0.1f)
+        {
+            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
+            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref lerpVelocity, lerp);
+
+            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+            //transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0f, targetAngle, 0f), lerp);
+
+            Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+
+            controller.Move(moveDir.normalized * speed * Time.deltaTime);
+        }
     }
 
 }
