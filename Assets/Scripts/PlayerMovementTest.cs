@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovementTest : MonoBehaviour
 {
     private CharacterController controller;
     private Transform cam;
