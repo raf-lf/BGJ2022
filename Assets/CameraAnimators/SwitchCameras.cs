@@ -6,8 +6,8 @@ public class SwitchCameras : MonoBehaviour
     private Animator anim;
 
     [SerializeField]
-    private CinemachineVirtualCamera[] vCam;
-    private int actualCamera;
+    public CinemachineVirtualCamera[] vCam;
+    public int actualCamera;
 
     private void Awake()
     {
