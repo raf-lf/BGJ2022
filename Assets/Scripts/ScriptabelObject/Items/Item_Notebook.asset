@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Item_Notebook
   m_EditorClassIdentifier: 
   itemName: 
-  itemShape: 
-  itemMaterial: 
-  itemColor: 
+  shape: 0
+  material: 1
+  color: 10

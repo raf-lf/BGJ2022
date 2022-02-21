@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 901ceaac4c28c8746b9e5f96cadc0881, type: 3}
   m_Name: Item_Ametista
   m_EditorClassIdentifier: 
-  itemName: 
-  shape: 0
-  material: 0
-  color: 0
+  itemName: Ametista
+  shape: 4
+  material: 6
+  color: 8

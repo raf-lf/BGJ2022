@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 901ceaac4c28c8746b9e5f96cadc0881, type: 3}
   m_Name: Item_Lata
   m_EditorClassIdentifier: 
-  itemName: 
-  itemShape: 
-  itemMaterial: 
-  itemColor: 
+  itemName: Lata
+  shape: 2
+  material: 1
+  color: 10
