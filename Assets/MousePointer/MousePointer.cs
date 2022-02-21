@@ -16,8 +16,16 @@ public class MousePointer : MonoBehaviour
 
     public void CheckMouseRaycast()
     {
-        if (Physics.Raycast(MouseWorldPosition(), out RaycastHit hit, interactionLayer) && hit.collider.CompareTag("Interagivel"))
+        bool hitou = Physics.Raycast(MouseWorldPosition(), out RaycastHit hit, interactionLayer);
+
+        if (hitou && hit.collider.CompareTag("Interagivel"))
         {
+            if (target != null)
+            {
+                target.changeMaterial = true;
+                target.isOnMouseTarget = false;
+            }
+
             target = hit.collider.gameObject.GetComponent<MouseTarget>();
 
             if(target != null)
