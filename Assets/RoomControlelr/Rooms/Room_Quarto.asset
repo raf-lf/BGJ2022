@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61d8bc8763719894791769a041b826d2, type: 3}
   m_Name: Room_Quarto
   m_EditorClassIdentifier: 
-  roomName: 
+  roomName: Quarto
   roomDescription: 
+  roomState: 0
+  vCamIndex: 0
   itemSpot: []
