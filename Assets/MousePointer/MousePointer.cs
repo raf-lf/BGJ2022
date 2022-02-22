@@ -12,6 +12,31 @@ public class MousePointer : MonoBehaviour
     private void Update()
     {
         CheckMouseRaycast();
+
+        if(Input.GetMouseButtonDown(0) && target != null && EventSystem.current.IsPointerOverGameObject())
+        {
+            CheckTargetItem();
+        }
+    }
+
+    public void CheckTargetItem()
+    {
+        string debug = "";
+        if(target.item == null)
+        {
+            // Bunitezas do farinha (~'u')~ // Animação puff
+            debug += "Nada \n";
+        }
+        else
+        {
+            // Animar overlay Item;
+
+            // Bunitezas do farinha (~'u')~ //
+            debug += "Encontrou item \n";
+            QuestSystem.qS.NextQuest();
+        }
+
+        Debug.Log(debug);
     }
 
     public void CheckMouseRaycast()

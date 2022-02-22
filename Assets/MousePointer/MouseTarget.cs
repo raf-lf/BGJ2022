@@ -15,6 +15,8 @@ public class MouseTarget : MonoBehaviour
 
     public bool interactable = true;
 
+    public GameObject item;
+
     protected virtual void Awake()
     {
         //rend = GetComponent<Renderer>();
