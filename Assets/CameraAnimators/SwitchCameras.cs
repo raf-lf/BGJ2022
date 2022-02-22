@@ -9,10 +9,25 @@ public class SwitchCameras : MonoBehaviour
     public CinemachineVirtualCamera[] vCam;
     public int actualCamera;
 
+    private void OnEnable()
+    {
+        RoomStateController.UpdateRoom += UpdateCamera;
+    }
+
+    private void OnDisable()
+    {
+        RoomStateController.UpdateRoom += UpdateCamera;
+    }
+
     private void Awake()
     {
         anim = GetComponent<Animator>();
-        actualCamera = 1;
+        actualCamera = 0;
+    }
+
+    public void UpdateCamera()
+    {
+        SwitchCamera(RoomStateController.roomStateController.GetRoomIndex());
     }
 
     public void SwitchCamera(int indice)

@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
     public float speed;
     Vector3 moveInput;
+    public List<SwitchCameraColliderConfig> roomCollider;
 
     private void Start()
     {
@@ -17,6 +17,15 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         DoMovement();
+        CheckRoom();
+    }
+
+    public void CheckRoom()
+    {
+        if(roomCollider[roomCollider.Count-1].roomConfig.roomState != RoomStateController.roomStateController.GetRoom())
+        {
+            RoomStateController.roomStateController.ChangeRoom(roomCollider[roomCollider.Count-1].roomConfig.roomState);
+        }
     }
 
     public void DoMovement()
