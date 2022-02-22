@@ -8,15 +8,23 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController controller;
     public float speed;
     Vector3 moveInput;
+    private Animator anim;
+    public ParticleSystem stepParticles;
 
     private void Start()
     {
         moveInput = Vector3.zero;
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
     {
         DoMovement();
+    }
+
+    public void VfxSteps()
+    {
+        stepParticles.Play();
     }
 
     public void DoMovement()
@@ -38,7 +46,10 @@ public class PlayerMovement : MonoBehaviour
 
         if (moveInput.magnitude >= 0.1f)
         {
+            anim.SetBool("moving", true);
             controller.Move(desiredMoveDirection * speed * Time.deltaTime);
         }
+        else
+            anim.SetBool("moving", false);
     }
 }

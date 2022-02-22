@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class QuadFaceCamera : MonoBehaviour
 {
-    public Transform camTransform;
+    private  Transform camTransform;
 
     private void Start()
     {

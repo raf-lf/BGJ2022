@@ -6,45 +6,60 @@ public class MouseTarget : MonoBehaviour
 {
     private Renderer rend;
     private Color actualColor;
+    [SerializeField]
+    private Animator shaderAnim;
+    [SerializeField]
+    private Animator objectAnim;
     public bool isOnMouseTarget;
     public bool changeMaterial;
 
-    private void Awake()
+    public bool interactable = true;
+
+    protected virtual void Awake()
     {
-        rend = GetComponent<Renderer>();
+        //rend = GetComponent<Renderer>();
     }
 
     private void Start()
     {
-        actualColor = rend.material.color;
+        //actualColor = rend.material.color;
         isOnMouseTarget = false;
         changeMaterial = false;
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         if (changeMaterial)
         {
-            if (isOnMouseTarget)
-            {
+            if (isOnMouseTarget && interactable)
                 OverMouse();
-            }
             else
-            {
                 LeftMouse();
-            }
         }
+    }
+
+    public virtual void Interact()
+    {
+
+    }
+
+    private void CheckClick()
+    {
+        if (Input.GetMouseButton(0) && isOnMouseTarget && interactable)
+            Interact();
     }
 
     private void OverMouse()
     {
-        rend.material.color = Color.red;
+        shaderAnim.SetBool("mouseOver", true);
+        //rend.material.color = Color.red;
         changeMaterial = false;
     }
 
     private void LeftMouse()
     {
-        rend.material.color = actualColor;
+        shaderAnim.SetBool("mouseOver", false);
+        //rend.material.color = actualColor;
         changeMaterial = false;
     }
 }
