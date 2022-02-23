@@ -15,7 +15,7 @@ public class QuestSystem : MonoBehaviour
     {
         if(qS == null)
         {
-            qS = new QuestSystem();
+            qS = this;
         }
     }
 
