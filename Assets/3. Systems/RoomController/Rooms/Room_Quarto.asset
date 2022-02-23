@@ -15,5 +15,5 @@ MonoBehaviour:
   roomName: Quarto
   roomDescription: 
   roomState: 0
-  vCamIndex: 0
+  vCamIndex: 4
   itemSpot: []

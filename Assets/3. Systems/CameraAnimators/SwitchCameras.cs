@@ -5,9 +5,8 @@ public class SwitchCameras : MonoBehaviour
 {
     private Animator anim;
 
-    [SerializeField]
     public CinemachineVirtualCamera[] vCam;
-    public int actualCamera;
+    public int atualCamera;
 
     private void OnEnable()
     {
@@ -16,39 +15,37 @@ public class SwitchCameras : MonoBehaviour
 
     private void OnDisable()
     {
-        RoomStateController.UpdateRoom += UpdateCamera;
+        RoomStateController.UpdateRoom -= UpdateCamera;
     }
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
-        actualCamera = 0;
+    }
+
+    private void Start()
+    {
+        UpdateCamera();
+    }
+
+    private void Update()
+    {
+        if (atualCamera != RoomStateController.roomStateController.atualCamera)
+            UpdateCamera();
     }
 
     public void UpdateCamera()
     {
-        SwitchCamera(RoomStateController.roomStateController.GetRoomIndex());
-    }
-
-    public void SwitchCamera(int indice)
-    {
-        for (int i = 0; i < vCam.Length; i++)
-        {
-            if(indice == i)
-            {
-                actualCamera = i;
-                SwitchPriority();
-                anim.Play(vCam[i].name);
-                return;
-            }
-        }
+        atualCamera = RoomStateController.roomStateController.atualCamera;
+        SwitchPriority();
+        anim.Play(vCam[atualCamera].name);
     }
 
     public void SwitchPriority()
     {
         for (int i = 0; i < vCam.Length; i++)
         {
-            if(i == actualCamera)
+            if(i == atualCamera)
                 vCam[i].Priority = 1;
             else
                 vCam[i].Priority = 0;

@@ -9,38 +9,37 @@ public class RoomStateController : MonoBehaviour
     public enum Room
     {
         Quarto,
-        Sala,
+        Sala01,
+        Sala02,
         Cozinha,
-        Corredor,
-        Banheiro
+        Corredor01,
+        Corredor02,
+        Banheiro,
+        Sala03
     }
     public RoomConfig[] roomConfig;
     public static RoomStateController roomStateController;
-    public Room actualRoom;
+    public Room atualRoom;
+    public int atualCamera;
 
     public void Awake()
     {
         if (roomStateController == null)
         {
-            roomStateController = new RoomStateController();
-            roomStateController.roomConfig = new RoomConfig[roomConfig.Length];
-
-            for (int i = 0; i < roomConfig.Length; i++)
-            {
-                roomStateController.roomConfig[i] = roomConfig[i];
-            }
+            roomStateController = this;
         }
     }
 
-    public void ChangeRoom(Room newRoom)
+    public void ChangeRoom(SwitchCameraColliderConfig newRoom)
     {
-        actualRoom = newRoom;
+        atualRoom = newRoom.roomConfig.roomState;
+        atualCamera = newRoom.roomConfig.vCamIndex;
         UpdateRoom?.Invoke();
     }
 
     public Room GetRoom()
     {
-        return actualRoom;
+        return atualRoom;
     }
 
     public int GetRoomIndex()
@@ -49,7 +48,7 @@ public class RoomStateController : MonoBehaviour
 
         for (int i = 0; i < roomConfig.Length; i++)
         {
-            if(actualRoom == roomConfig[i].roomState)
+            if(atualRoom == roomConfig[i].roomState)
             {
                 index = i;
             }
