@@ -17,14 +17,17 @@ public class AudioLoopVolumeChanger : MonoBehaviour
 
     private void Update()
     {
-        switch (type)
+        if (loopSource.clip != null)
         {
-            case AudioType.sfx:
-                loopSource.volume = AudioManager.scriptAudio.ReturnSfxVolume();
-                break;
-            case AudioType.bgm:
-                loopSource.volume = AudioManager.scriptAudio.ReturnBgmVolume();
-                break;
+            switch (type)
+            {
+                case AudioType.sfx:
+                    loopSource.volume = AudioManager.scriptAudio.ReturnSfxVolume();
+                    break;
+                case AudioType.bgm:
+                        loopSource.volume = AudioManager.scriptAudio.ReturnBgmVolume();
+                    break;
+            }
         }
     }
 
