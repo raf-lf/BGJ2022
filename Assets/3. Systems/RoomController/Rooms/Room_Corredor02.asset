@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 61d8bc8763719894791769a041b826d2, type: 3}
-  m_Name: Room_Sala
+  m_Name: Room_Corredor02
   m_EditorClassIdentifier: 
-  roomName: 
+  roomName: Corredor
   roomDescription: 
-  roomState: 1
-  vCamIndex: 4
+  roomState: 5
+  vCamIndex: 2
   itemSpot: []

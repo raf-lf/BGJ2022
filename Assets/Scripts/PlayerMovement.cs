@@ -25,21 +25,12 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         DoMovement();
-        CheckRoom();
     }
 
     public void Step()
     {
         stepSfx.PlayInspectorSfx();
         stepParticles.Play();
-    }
-
-    public void CheckRoom()
-    {
-        if(roomCollider[roomCollider.Count-1].roomConfig.roomState != RoomStateController.roomStateController.GetRoom())
-        {
-            RoomStateController.roomStateController.ChangeRoom(roomCollider[roomCollider.Count-1].roomConfig.roomState);
-        }
     }
 
     public void DoMovement()
@@ -66,5 +57,18 @@ public class PlayerMovement : MonoBehaviour
         }
         else
             anim.SetBool("moving", false);
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("RoomCollider")) // estou saindo de um colisor de uma área
+        {
+            SwitchCameraColliderConfig colliderConfig = other.GetComponent<SwitchCameraColliderConfig>();
+
+            if (RoomStateController.roomStateController.atualCamera != colliderConfig.roomConfig.vCamIndex) // o colisor do qual estou saindo é de outro estado diferente do que eu estou.
+            {
+                RoomStateController.roomStateController.ChangeRoom(colliderConfig); // mudo a câmera para o colisor que acabei de sair
+            }
+        }
     }
 }
