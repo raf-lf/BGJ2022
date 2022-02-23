@@ -27,13 +27,13 @@ AnimationClip:
         outSlope: 0
         tangentMode: 136
         weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material.Vector1_cc18ed580bcc4c33a4f82ff0a583f9c1
-    path: 
+    path: Object
     classID: 23
     script: {fileID: 0}
   m_PPtrCurves: []
@@ -45,7 +45,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 0
+      path: 2936123098
       attribute: 2153037015
       script: {fileID: 0}
       typeID: 23
@@ -83,13 +83,13 @@ AnimationClip:
         outSlope: 0
         tangentMode: 136
         weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material.Vector1_cc18ed580bcc4c33a4f82ff0a583f9c1
-    path: 
+    path: Object
     classID: 23
     script: {fileID: 0}
   m_EulerEditorCurves: []
