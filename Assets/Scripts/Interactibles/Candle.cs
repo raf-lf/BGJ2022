@@ -37,18 +37,6 @@ public class Candle : MouseTarget
 
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-            SanityManager.lightLevel++;
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-            SanityManager.lightLevel--;
-    }
-
     public void LifeChange(float value)
     {
         life = Mathf.Clamp(life + value, 0, maxLife);
@@ -62,8 +50,6 @@ public class Candle : MouseTarget
     protected override void Update()
     {
         base.Update();
-
-        LifeChange(-depletionRate * Time.deltaTime);
 
         //candleLight.intensity = maxLightIntensity * (life / maxLife);
         lightCollider.radius = area * (life / maxLife);

@@ -1,20 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public enum sanityStage { high, medium, low, none }
 
 public class SanityManager : MonoBehaviour
 {
-    [Header("Light")]
+    [Header("Sanity States")]
+    public bool illusion;
+    public bool curse;
+    public bool recovery;
     public static int lightLevel;
 
-    [Header ("Sanity Atribute")]
+    [Header("State Modifiers")]
+    public float illusionModifier = 1;
+    public float curseModifier = 5;
+    public float recoveryModifier = -1;
+    private float modifier = 1;
+
+    [Header("Sanity Atribute")]
     public float sanity = 100;
     private float sanityMax = 100;
-    public float sanityDecay = 10;
+    public float sanityDecay = 1;
     public float[] sanityThreshold = { .66f, .33f };
     public static sanityStage currentSanityStage;
 
@@ -30,9 +37,22 @@ public class SanityManager : MonoBehaviour
     {
 
         lightMeterAnim.SetInteger("level", lightLevel);
+        lightMeterAnim.SetBool("illusion", illusion);
+        lightMeterAnim.SetBool("curse", curse);
+        lightMeterAnim.SetBool("recovery", recovery);
 
-        if (lightLevel <= 0)
-            sanity = Mathf.Clamp(sanity - sanityDecay * Time.deltaTime, 0, sanityMax);
+        if (recovery)
+            modifier = recoveryModifier;
+        else if (curse)
+            modifier = curseModifier;
+        else if (illusion)
+            modifier = illusionModifier;
+        else if (lightLevel <= 0)
+            modifier = 1;
+        else
+            modifier = 0;
+
+        sanity = Mathf.Clamp(sanity - (sanityDecay * modifier) * Time.deltaTime, 0, sanityMax);
  
         if (insanityShader != null)
         {
