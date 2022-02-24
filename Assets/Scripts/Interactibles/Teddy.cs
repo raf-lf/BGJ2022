@@ -1,0 +1,104 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public enum TeddyState {normal, lonely, defiled}
+
+public class Teddy : MouseTarget
+{
+    [Header ("Teddy Bear")]
+    public float life = 300;
+    private float maxLife;
+    public float lifeThreshold = .5f;
+    public float lifeDecay = 1;
+    public int decayState = 0;
+
+    public bool hugging;
+
+    public Renderer teddyRenderer;
+    public Texture[] teddySprites = new Texture[3];
+    public Texture[] playerHuggingSprites = new Texture[3];
+    private Texture playerNormalSprite;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        maxLife = life;
+    }
+
+    public override void Interact()
+    {
+        base.Interact();
+
+        Hug(true);
+        interactable = false;
+    }
+
+    public void Hug(bool on)
+    {
+        if(!hugging)
+            playerNormalSprite = PlayerMovement.Player.GetComponentInChildren<Renderer>().material.mainTexture;
+
+        hugging = on;
+
+        PlayerMovement.Player.GetComponentInChildren<PlayerMovement>().anim.SetBool("hug", on);
+
+        PlayerMovement.PlayerControls = !on;
+        teddyRenderer.enabled = !on;
+
+        if (decayState ==2)
+            SanityManager.sanityScript.curse = on;
+        else
+            SanityManager.sanityScript.recovery = on;
+
+        if (on)
+        {
+            PlayerMovement.Player.GetComponentInChildren<Renderer>().material.mainTexture = playerHuggingSprites[decayState];
+
+            if (decayState == 1)
+                life = lifeThreshold * maxLife;
+            else if (decayState == 0)
+                life = maxLife;
+        }
+        else
+            PlayerMovement.Player.GetComponentInChildren<Renderer>().material.mainTexture = playerNormalSprite;
+        
+
+    }
+
+
+    private void Decay()
+    {
+        life = Mathf.Clamp(life - lifeDecay * Time.deltaTime, 0, maxLife);
+
+        if (life <= 0)
+            decayState = 2;
+        else if (life <= lifeThreshold * maxLife)
+            decayState = 1;
+        else
+            decayState = 0;
+
+        teddyRenderer.material.mainTexture = teddySprites[decayState];
+
+    }
+
+    protected override void Update()
+    {
+        base.Update();
+
+        if(hugging)
+        {
+            if(Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0 || Input.GetMouseButtonDown(0))
+            {
+                Hug(false);
+                interactable = true;
+            }
+        }
+        else
+        {
+            Decay();
+        }
+
+    }
+
+}

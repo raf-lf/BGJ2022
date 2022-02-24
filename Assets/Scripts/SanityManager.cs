@@ -6,6 +6,7 @@ public enum sanityStage { high, medium, low, none }
 
 public class SanityManager : MonoBehaviour
 {
+    public static SanityManager sanityScript;
     [Header("Sanity States")]
     public bool illusion;
     public bool curse;
@@ -32,6 +33,11 @@ public class SanityManager : MonoBehaviour
     public Animator evilEyeAnim;
     public Animator lightMeterAnim;
     public AudioSource sfxLoop;
+
+    private void Awake()
+    {
+        sanityScript = this;
+    }
 
     private void Update()
     {
