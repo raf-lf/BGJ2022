@@ -324,7 +324,7 @@ RectTransform:
   m_Children:
   - {fileID: 2656742854376163665}
   m_Father: {fileID: 7046607872877615880}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -361,7 +361,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 49fdce94d51c06d46b4575bb0acf4293, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -893,7 +893,7 @@ RectTransform:
   - {fileID: 4075469520448024274}
   - {fileID: 4075469521920730152}
   m_Father: {fileID: 7046607872877615880}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -1006,7 +1006,7 @@ GameObject:
   - component: {fileID: 4075469520143395079}
   - component: {fileID: 4075469520143395072}
   m_Layer: 5
-  m_Name: Eye Closed
+  m_Name: Eye 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1156,7 +1156,7 @@ GameObject:
   - component: {fileID: 4075469520448024272}
   - component: {fileID: 4075469520448024273}
   m_Layer: 5
-  m_Name: Eye Opened
+  m_Name: Eye 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1238,7 +1238,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4075469520603758770
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1569,9 +1569,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4075469521920730152}
   - component: {fileID: 4075469521920730158}
-  - component: {fileID: 4075469521920730159}
   m_Layer: 5
-  m_Name: Ritual
+  m_Name: Eye 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1606,36 +1605,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4075469521920730153}
   m_CullTransparentMesh: 1
---- !u!114 &4075469521920730159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4075469521920730153}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: -2254249163503624391, guid: 07ea5481d42a2aa4ebcd8181a3b7b393, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &4431588084237311719
 GameObject:
   m_ObjectHideFlags: 0
@@ -1703,7 +1672,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 49fdce94d51c06d46b4575bb0acf4293, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -2343,8 +2312,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 7776913881035901582}
   - {fileID: 4075469519948727634}
+  - {fileID: 7776913881035901582}
   - {fileID: 1925801991542068556}
   m_Father: {fileID: 7046607874045334605}
   m_RootOrder: 1
@@ -2949,13 +2918,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e4c326de5580c34e9024f7a65907f72, type: 3}
---- !u!4 &1925801991542068556 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8895530877786569258, guid: 2e4c326de5580c34e9024f7a65907f72, type: 3}
-  m_PrefabInstance: {fileID: 7046607873834905446}
-  m_PrefabAsset: {fileID: 0}
 --- !u!82 &604940325955072839 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 7615510569423608865, guid: 2e4c326de5580c34e9024f7a65907f72, type: 3}
+  m_PrefabInstance: {fileID: 7046607873834905446}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1925801991542068556 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8895530877786569258, guid: 2e4c326de5580c34e9024f7a65907f72, type: 3}
   m_PrefabInstance: {fileID: 7046607873834905446}
   m_PrefabAsset: {fileID: 0}
