@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5426835158758937677}
   - component: {fileID: 5426835158758937674}
   m_Layer: 6
-  m_Name: Drawer
+  m_Name: Subpart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -250,6 +250,11 @@ MonoBehaviour:
   interactable: 1
   item: {fileID: 0}
   parameterName: open
+  alreadyUsed: 0
+  itemInside: 0
+  delay: 0.25
+  vfxItem: {fileID: 0}
+  vfxNoItem: {fileID: 0}
 --- !u!95 &5426835160468608891
 Animator:
   serializedVersion: 3
