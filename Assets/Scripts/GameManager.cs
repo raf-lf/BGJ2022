@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class GameManager : MonoBehaviour
+public static class GameManager
 {
-
-
+    public static List<Room> rooms = new List<Room>();
 }

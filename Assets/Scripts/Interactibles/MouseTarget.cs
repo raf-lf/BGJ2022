@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class MouseTarget : MonoBehaviour
 {
-    private Renderer rend;
-    private Color actualColor;
     [SerializeField]
     protected Animator shaderAnim;
     [SerializeField]
@@ -45,7 +43,7 @@ public class MouseTarget : MonoBehaviour
 
     public virtual void Interact()
     {
-        Debug.Log("Interacted with " + name);
+        //Debug.Log("Interacted with " + name);
     }
 
     private void CheckClick()

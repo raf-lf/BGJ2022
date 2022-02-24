@@ -7,7 +7,10 @@ using TMPro;
 public enum sanityStage { high, medium, low, none }
 
 public class SanityManager : MonoBehaviour
-{   
+{
+    [Header("Light")]
+    public static int lightLevel;
+
     [Header ("Sanity Atribute")]
     public float sanity = 100;
     private float sanityMax = 100;
@@ -18,17 +21,24 @@ public class SanityManager : MonoBehaviour
     [Header("HUD Elements")]
     public Renderer insanityShader;
     public TextMeshProUGUI sanityCounter;
-    public Image sanityIconImage;
     public Image sanityRingImage;
-    public Sprite[] sanityStates = new Sprite[4];
+    public Animator evilEyeAnim;
+    public Animator lightMeterAnim;
     public AudioSource sfxLoop;
 
     private void Update()
     {
-        sanity = Mathf.Clamp(sanity - sanityDecay * Time.deltaTime, 0, sanityMax);
 
-        insanityShader.material.SetFloat("Vector1_b661a3301f8e4505ab0b8de3842c7c18",  1 - (sanity / sanityMax));
-        insanityShader.material.SetFloat("Vector1_d4899e5ce8674ce593462513c44d13bd",  1 - (sanity / sanityMax));
+        lightMeterAnim.SetInteger("level", lightLevel);
+
+        if (lightLevel <= 0)
+            sanity = Mathf.Clamp(sanity - sanityDecay * Time.deltaTime, 0, sanityMax);
+ 
+        if (insanityShader != null)
+        {
+            insanityShader.material.SetFloat("Vector1_b661a3301f8e4505ab0b8de3842c7c18", 1 - (sanity / sanityMax));
+            insanityShader.material.SetFloat("Vector1_d4899e5ce8674ce593462513c44d13bd", 1 - (sanity / sanityMax));
+        }
 
         if (sanity / sanityMax <= .5f)
         {
@@ -44,22 +54,22 @@ public class SanityManager : MonoBehaviour
         if (sanity / sanityMax > sanityThreshold[0])
         {
             currentSanityStage = sanityStage.high;
-            sanityIconImage.sprite = sanityStates[3];
+            evilEyeAnim.SetInteger("sanity", 0);
         }
         else if (sanity / sanityMax > sanityThreshold[1])
         {
             currentSanityStage = sanityStage.medium;
-            sanityIconImage.sprite = sanityStates[2];
+            evilEyeAnim.SetInteger("sanity", 1);
         }
         else if (sanity / sanityMax > 0)
         {
             currentSanityStage = sanityStage.low;
-            sanityIconImage.sprite = sanityStates[1];
+            evilEyeAnim.SetInteger("sanity", 2);
         }
         else
         {
             currentSanityStage = sanityStage.none;
-            sanityIconImage.sprite = sanityStates[0];
+            evilEyeAnim.SetInteger("sanity", 3);
         }
 
         sanityCounter.text = (int)sanity + " / " + (int)sanityMax;
