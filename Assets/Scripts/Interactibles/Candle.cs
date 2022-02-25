@@ -37,6 +37,14 @@ public class Candle : MouseTarget
 
     }
 
+    public override void Interact()
+    {
+        base.Interact();
+
+        if (InventoryManager.scriptInventory.SpendCharge())
+            LifeChange(maxLife);
+    }
+
     public void LifeChange(float value)
     {
         life = Mathf.Clamp(life + value, 0, maxLife);

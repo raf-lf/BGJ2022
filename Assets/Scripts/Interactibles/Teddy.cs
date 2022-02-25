@@ -13,6 +13,9 @@ public class Teddy : MouseTarget
     public float lifeDecay = 1;
     public int decayState = 0;
 
+    public float minHugDuration = 1;
+    private float hugTimer;
+
     public bool hugging;
 
     public Renderer teddyRenderer;
@@ -53,6 +56,8 @@ public class Teddy : MouseTarget
 
         if (on)
         {
+            hugTimer = minHugDuration;
+
             PlayerMovement.Player.GetComponentInChildren<Renderer>().material.mainTexture = playerHuggingSprites[decayState];
 
             if (decayState == 1)
@@ -88,11 +93,17 @@ public class Teddy : MouseTarget
 
         if(hugging)
         {
-            if(Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0 || Input.GetMouseButtonDown(0))
+            if (hugTimer <= 0)
             {
-                Hug(false);
-                interactable = true;
+                //if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+                if (Input.anyKey)
+                {
+                    Hug(false);
+                    interactable = true;
+                }
             }
+            else
+                hugTimer = Mathf.Clamp(hugTimer - Time.deltaTime, 0, Mathf.Infinity);
         }
         else
         {

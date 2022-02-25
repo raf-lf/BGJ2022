@@ -6,34 +6,72 @@ using TMPro;
 
 public class InventoryManager : MonoBehaviour
 {
-    public int itemsCollected;
-
-    public Animator inventoryAnimator;
-    public TextMeshProUGUI itemQty;
     public static InventoryManager scriptInventory;
 
-    private void Start()
-    {
-        UpdateInventory();
-    }
+    [Header("Items")]
+    public int trinkets = 0;
+    public int candleCharges = 3;
 
-    public void GetItem(int qty)
-    {
-        itemsCollected += qty;
-        //inventoryAnimator.Play("itemAdd");
-        inventoryAnimator.SetTrigger("itemAdd");
-
-        if (InventoryManager.scriptInventory.itemsCollected >= FindObjectOfType<SearchableSpotManager>().totalItemsToSpawn)
-            HintManager.scriptHint.ShowEndHint();
-    }
+    [Header("Components")]
+    public Animator[] itemAnim = new Animator[2];
+    public TextMeshProUGUI[] itemQty = new TextMeshProUGUI[2];
 
     public void Awake()
     {
         scriptInventory = this;
     }
 
-    public void UpdateInventory()
+    private void Start()
     {
-        itemQty.text = itemsCollected.ToString();
+        UpdateAllItemCount();
+    }
+
+    public bool SpendCharge()
+    {
+        if (candleCharges > 0)
+        {
+            ChangeItem(1, -1);
+            return true;
+        }
+        else
+        {
+            itemAnim[1].SetTrigger("missing");
+            return false;
+        }
+
+    }
+
+    public void AddTrinket(int qty)
+    {
+        ChangeItem(0,qty);
+
+        if (InventoryManager.scriptInventory.trinkets >= FindObjectOfType<GameplayManager>().totalItemsToSpawn)
+            HintManager.scriptHint.ShowEndHint();
+    }
+
+    public void ChangeItem(int id, int qty)
+    {
+        if (qty > 0)
+            itemAnim[id].SetTrigger("add");
+        else if (qty < 0)
+            itemAnim[id].SetTrigger("remove");
+
+        switch (id)
+        {
+            case 0:
+                trinkets += qty;
+                break;
+            case 1:
+                candleCharges += qty;
+                break;
+        }
+
+    }
+
+    public void UpdateAllItemCount()
+    {
+        itemQty[0].text = trinkets.ToString();
+        itemQty[1].text = candleCharges.ToString();
+
     }
 }

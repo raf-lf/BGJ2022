@@ -28,8 +28,8 @@ public class SearchableSpot : MouseTarget
             if (itemInside)
             {
                 itemInside = false;
-                if (GetComponentInParent<SearchableSpotManager>().spawnMechanics == itemSpawnType.waitPickup)
-                    GetComponentInParent<SearchableSpotManager>().itemSpawned = false;
+                if (GetComponentInParent<GameplayManager>().spawnMechanics == itemSpawnType.waitPickup)
+                    GetComponentInParent<GameplayManager>().itemSpawned = false;
             }
 
             //DELETE ME AFTER TESTING
@@ -45,7 +45,7 @@ public class SearchableSpot : MouseTarget
         if (item)
         {
             vfxItem.Play();
-            InventoryManager.scriptInventory.GetItem(1);
+            InventoryManager.scriptInventory.AddTrinket(1);
 
         }
         else
