@@ -5,18 +5,32 @@ using UnityEngine;
 public class ManualManager : MonoBehaviour
 {
     public Animator manualAnim;
-    public Animator iconAnim;
-
+    public int pageQty;
+    private bool paused;
+    
     public void GoPage(bool advance)
     {
+        int currentPage = manualAnim.GetInteger("page");
+
         if (advance)
-            manualAnim.SetInteger("page", manualAnim.GetInteger("page") + 1);
+            currentPage++;
         else
-            manualAnim.SetInteger("page", manualAnim.GetInteger("page") - 1);
+            currentPage--;
+
+        currentPage = Mathf.Clamp(currentPage, 1, pageQty);
+
+        manualAnim.SetInteger("page", currentPage);
 
     }
-    public void OpenClose(bool open)
+    public void OpenClose()
     {
+        manualAnim.SetBool("active", !manualAnim.GetBool("active"));
+        paused = !paused;
+
+        if (paused)
+            Time.timeScale = 0;
+        else
+            Time.timeScale = 1;
 
     }
 }
