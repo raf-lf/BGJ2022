@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Magic Overlay Material
+  m_Shader: {fileID: -6465566751694194690, guid: 181464339c5cbf649b290ca52842d7fe, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_7b8ffad070e3453c939aee2f7c4e3b8e:
+        m_Texture: {fileID: 2800000, guid: 1351329ddf7c4e443a5f41e3f61ac76f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_7a2d8e2fb6364bf9991ed3965db1b830: 0.044
+    m_Colors:
+    - Color_a7003f4e065b477eb56b32b4dba7844a: {r: 642.5098, g: 0, b: 1024, a: 1}
+    - Color_a7003f4e065b477eb56b32b4dba7844a_1: {r: 11.984314, g: 0.5647059, b: 2.447059, a: 1}
+  m_BuildTextureStacks: []

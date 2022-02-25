@@ -9,7 +9,7 @@ public class Candlelight : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             SanityManager.lightLevel++;
-            Debug.Log("Light level: " + SanityManager.lightLevel);
+            //Debug.Log("Light level: " + SanityManager.lightLevel);
         }
     }
 
@@ -18,7 +18,7 @@ public class Candlelight : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             SanityManager.lightLevel--;
-            Debug.Log("Light level: " + SanityManager.lightLevel);
+            //Debug.Log("Light level: " + SanityManager.lightLevel);
         }
     }
 

@@ -48,7 +48,7 @@ public class MouseTarget : MonoBehaviour
 
     private void CheckClick()
     {
-        if (Input.GetMouseButton(0) && isOnMouseTarget && interactable)
+        if (Input.GetMouseButtonDown(0) && isOnMouseTarget && interactable)
             Interact();
     }
 
