@@ -1044,7 +1044,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4284966759
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -2733,7 +2733,7 @@ MonoBehaviour:
   illusion: 0
   curse: 0
   recovery: 0
-  illusionModifier: 1
+  illusionModifier: 3
   curseModifier: 5
   recoveryModifier: -5
   sanity: 100

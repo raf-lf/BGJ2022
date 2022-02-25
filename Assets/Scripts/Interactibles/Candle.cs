@@ -8,6 +8,7 @@ public class Candle : MouseTarget
     public float life;
     private float maxLife;
     public float depletionRate;
+    public ParticleSystem vfxRekindle;
 
     [Header("Sizes")]
     public float area = 10;
@@ -42,7 +43,10 @@ public class Candle : MouseTarget
         base.Interact();
 
         if (InventoryManager.scriptInventory.SpendCharge())
+        {
+            vfxRekindle.Play();
             LifeChange(maxLife);
+        }
     }
 
     public void LifeChange(float value)
