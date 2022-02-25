@@ -15,7 +15,8 @@ public class RoomStateController : MonoBehaviour
         Corredor01,
         Corredor02,
         Banheiro,
-        Sala03
+        Sala03,
+        Cozinha02
     }
     public RoomConfig[] roomConfig;
     public static RoomStateController roomStateController;
