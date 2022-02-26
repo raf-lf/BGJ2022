@@ -103,6 +103,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 085f427872bacb24691872312bf48ce7, type: 2}
+    - target: {fileID: 7682664564379626537, guid: 9d696effb50f05a4e9014e068dbc713f, type: 3}
+      propertyPath: animState
+      value: IdleEye
+      objectReference: {fileID: 0}
     - target: {fileID: 8485694519782939114, guid: 9d696effb50f05a4e9014e068dbc713f, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -111,5 +115,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1956291832320805175, guid: 9d696effb50f05a4e9014e068dbc713f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9d696effb50f05a4e9014e068dbc713f, type: 3}
