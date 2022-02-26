@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/1. Scenes/House_Fixed.unity
+    guid: 3ec2cc8d6ff9e7b4686f630d708242bf
+  - enabled: 1
+    path: Assets/1. Scenes/GameOver.unity
+    guid: bf65fc372dbe0cf4595d0a31e888ba32
   m_configObjects: {}

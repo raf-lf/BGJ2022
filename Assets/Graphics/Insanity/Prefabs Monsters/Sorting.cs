@@ -10,9 +10,12 @@ public class Sorting : MonoBehaviour
     [SerializeField] int minSorting;
     int counting;
     int randomValue;
+    public bool noCollider;
+
+    
     void Start()
     {
-        
+   
     }
 
     void Update()
@@ -26,10 +29,9 @@ public class Sorting : MonoBehaviour
     }
     public void SortingObject()
     {
-        //valor da quantida de monstros
         for (int i = 0; i < groups.Length; i++)
         {
-            //n do monstro
+            
             int index = Random.Range(0, groups.Length + 1);
 
             if (i == index && !groups[i].activeSelf)
@@ -44,7 +46,7 @@ public class Sorting : MonoBehaviour
     {
         for (int i = 0; i < monsters.Length; i++)
         {
-            int index = Random.Range(0, monsters.Length + 1);
+            int index = Random.Range(1, monsters.Length + 1);
             if (i == index) monsters[i].SetActive(true);
             else monsters[i].SetActive(false);
         }
@@ -52,7 +54,7 @@ public class Sorting : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if(other.tag == "Player" && !noCollider)
         {
             foreach (var item in groups) item.SetActive(false);
             randomValue = Random.Range(minSorting, groups.Length + 1);
@@ -62,7 +64,7 @@ public class Sorting : MonoBehaviour
 
     private void OnEnable()
     {
-        if(monsters.Length >0) SortingOneObject();
+        if(monsters.Length > 0) SortingOneObject();
     }
 }
 

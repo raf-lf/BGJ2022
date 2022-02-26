@@ -25,6 +25,7 @@ public class SanityManager : MonoBehaviour
     public float sanityDecay = 1;
     public float[] sanityThreshold = { .66f, .33f };
     public static sanityStage currentSanityStage;
+    private bool gameOverFlag = false;
 
     [Header("HUD Elements")]
     public Renderer insanityShader;
@@ -101,6 +102,21 @@ public class SanityManager : MonoBehaviour
         sanityCounter.text = (int)sanity + " / " + (int)sanityMax;
 
         sanityRingImage.fillAmount = sanity / sanityMax;
+
+        if(sanity <= 0 && !gameOverFlag)
+        {
+            GameOver();
+        }
     }
 
+    public void GameOver()
+    {
+        gameOverFlag = true;
+        PlayerMovement.PlayerControls = false;
+        GameOverManager.SetGameOverCondition("Lose");
+
+        // Make the animations of Players Crazy;
+
+        UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
+    }
 }
