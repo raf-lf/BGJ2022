@@ -27,9 +27,9 @@ public class Room : MonoBehaviour
 
 
     public delegate void EntryDelegate();
-    public event EntryDelegate OnEntry;
+    public static event EntryDelegate OnEntry;
     public delegate void ExitDelegate();
-    public event ExitDelegate OnExit;
+    public static event ExitDelegate OnExit;
 
     private void Awake()
     {
@@ -45,7 +45,7 @@ public class Room : MonoBehaviour
     {
         if (GameManager.currentRoom != this)
         {
-            OnEntry();
+            OnEntry?.Invoke();
             GameManager.currentRoom.RoomExit();
 
             GameManager.currentRoom = this;
@@ -56,7 +56,7 @@ public class Room : MonoBehaviour
 
     public void RoomExit()
     {
-        OnExit();
+        OnExit?.Invoke();
         /*
         foreach (SearchableSpot obj in searchablesInRoom)
         {
