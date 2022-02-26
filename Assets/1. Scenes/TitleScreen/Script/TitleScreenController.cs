@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TitleScreenController : MonoBehaviour
 {
@@ -17,7 +18,6 @@ public class TitleScreenController : MonoBehaviour
     }
     public TitleScreenState titleState;
     public Animator anim;
-   
 
     private void Awake()
     {
@@ -109,5 +109,10 @@ public class TitleScreenController : MonoBehaviour
     public void AppQuit()
     {
         Application.Quit();
+    }
+
+    public void SwitchScene(string scene)
+    {
+        SceneManager.LoadScene(scene);
     }
 }
