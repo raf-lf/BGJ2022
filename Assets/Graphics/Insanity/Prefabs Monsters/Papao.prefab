@@ -37,15 +37,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5288435374836883824, guid: 9d696effb50f05a4e9014e068dbc713f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.18
+      value: -22.6
       objectReference: {fileID: 0}
     - target: {fileID: 5288435374836883824, guid: 9d696effb50f05a4e9014e068dbc713f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.87
+      value: 10.827518
       objectReference: {fileID: 0}
     - target: {fileID: 5288435374836883824, guid: 9d696effb50f05a4e9014e068dbc713f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.25
+      value: -25.939268
       objectReference: {fileID: 0}
     - target: {fileID: 5288435374836883824, guid: 9d696effb50f05a4e9014e068dbc713f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -80,16 +80,24 @@ PrefabInstance:
       value: Papao
       objectReference: {fileID: 0}
     - target: {fileID: 5288435375319952624, guid: 9d696effb50f05a4e9014e068dbc713f, type: 3}
+      propertyPath: m_Range
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5288435375319952624, guid: 9d696effb50f05a4e9014e068dbc713f, type: 3}
       propertyPath: m_Intensity
-      value: 3.2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5288435375319952625, guid: 9d696effb50f05a4e9014e068dbc713f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.52
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5288435375319952625, guid: 9d696effb50f05a4e9014e068dbc713f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.97
       objectReference: {fileID: 0}
     - target: {fileID: 5288435375319952625, guid: 9d696effb50f05a4e9014e068dbc713f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.23
+      value: -1.19
       objectReference: {fileID: 0}
     - target: {fileID: 5403099491379939241, guid: 9d696effb50f05a4e9014e068dbc713f, type: 3}
       propertyPath: m_Materials.Array.data[0]

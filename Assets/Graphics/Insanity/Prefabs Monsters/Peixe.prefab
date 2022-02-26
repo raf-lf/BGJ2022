@@ -21,15 +21,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5288435374836883824, guid: 9d696effb50f05a4e9014e068dbc713f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.13
+      value: -13.68
       objectReference: {fileID: 0}
     - target: {fileID: 5288435374836883824, guid: 9d696effb50f05a4e9014e068dbc713f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 10.827518
       objectReference: {fileID: 0}
     - target: {fileID: 5288435374836883824, guid: 9d696effb50f05a4e9014e068dbc713f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.25
+      value: -25.939268
       objectReference: {fileID: 0}
     - target: {fileID: 5288435374836883824, guid: 9d696effb50f05a4e9014e068dbc713f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -63,13 +63,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Peixe
       objectReference: {fileID: 0}
+    - target: {fileID: 5288435375319952624, guid: 9d696effb50f05a4e9014e068dbc713f, type: 3}
+      propertyPath: m_Intensity
+      value: 12.7
+      objectReference: {fileID: 0}
     - target: {fileID: 5288435375319952625, guid: 9d696effb50f05a4e9014e068dbc713f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.088
       objectReference: {fileID: 0}
     - target: {fileID: 5288435375319952630, guid: 9d696effb50f05a4e9014e068dbc713f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5403099491379939241, guid: 9d696effb50f05a4e9014e068dbc713f, type: 3}
       propertyPath: m_Materials.Array.data[0]
