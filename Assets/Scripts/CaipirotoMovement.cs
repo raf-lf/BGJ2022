@@ -24,6 +24,11 @@ public class CaipirotoMovement : MonoBehaviour
     [Header("Movement Configs")]
     public float movementSpeed;
 
+    [Header("Teleport")]
+    public float teleportDelay = .5f;
+    public ParticleSystem vfxTeleport;
+    public PlaySfx sfxTeleport;
+
     private void Start()
     {
         RandomizeRoom();
@@ -67,8 +72,13 @@ public class CaipirotoMovement : MonoBehaviour
         timeStayedInARoom = 0;
 
         howManyTimeWillStayInARoom = Random.Range(minimumSpotVisitation, maximumSpotVisitation);
-        
+
+        GetComponent<Animator>().SetTrigger("teleport");
+        //AQUI PRECISA ESPERAR O TELEPORT DELAY SEGUNDOS
         transform.position = atualSpot.position;
+        sfxTeleport.PlayInspectorSfx();
+        vfxTeleport.Play();
+
         isWaiting = true;
 
         // Make the animation to Caipiroto appears
