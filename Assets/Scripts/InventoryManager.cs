@@ -15,6 +15,9 @@ public class InventoryManager : MonoBehaviour
     [Header("Components")]
     public Animator[] itemAnim = new Animator[2];
     public TextMeshProUGUI[] itemQty = new TextMeshProUGUI[2];
+    public Image trinketPopup;
+    public Sprite[] trinketSprites = new Sprite[0];
+
 
     public void Awake()
     {
@@ -43,6 +46,8 @@ public class InventoryManager : MonoBehaviour
 
     public void AddTrinket(int qty)
     {
+        trinketPopup.sprite = trinketSprites[Random.Range(0, trinketSprites.Length)];
+
         ChangeItem(0,qty);
 
         if (InventoryManager.scriptInventory.trinkets >= FindObjectOfType<GameplayManager>().totalItemsToSpawn)
