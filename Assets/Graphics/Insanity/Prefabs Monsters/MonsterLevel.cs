@@ -14,15 +14,18 @@ public class MonsterLevel : MonoBehaviour
     bool IsIdle;
     void Awake()
     {
+        StartCoroutine(InsanityCheck());        
+    }
+
+    private void OnEnable()
+    {
         StartCoroutine(InsanityCheck());
-        
     }
 
     // Update is called once per frame
     private void Start()
     {
-        sanityManager = FindObjectOfType<SanityManager>();
-        
+        sanityManager = FindObjectOfType<SanityManager>();        
     }
     
     IEnumerator InsanityCheck()
@@ -71,13 +74,13 @@ public class MonsterLevel : MonoBehaviour
 
         for (int i = 0; i < monsters.Length; i++)
         {
-            if (i == monsterLevel && levelChanged)
+            if (i == monsterLevel)
             {
-                monsters[i].GetComponent<Animator>().Play("MonsterIn");
+                monsters[i].SetActive(true);
             }
-            if (i != monsterLevel && levelChanged)
+            if (i != monsterLevel)
             {
-                monsters[i].GetComponent<Animator>().Play("MonsterOut");
+                monsters[i].SetActive(false);
             }
         }
         

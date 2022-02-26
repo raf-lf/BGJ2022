@@ -12,10 +12,8 @@ public class Sorting : MonoBehaviour
     int randomValue;
     public bool noCollider;
 
-    
-    void Start()
+    private void Start()
     {
-   
     }
 
     void Update()
@@ -30,8 +28,7 @@ public class Sorting : MonoBehaviour
     public void SortingObject()
     {
         for (int i = 0; i < groups.Length; i++)
-        {
-            
+        {            
             int index = Random.Range(0, groups.Length + 1);
 
             if (i == index && !groups[i].activeSelf)
@@ -44,11 +41,21 @@ public class Sorting : MonoBehaviour
 
     public void SortingOneObject()
     {
+        foreach (var item in monsters) item.SetActive(false);
+
         for (int i = 0; i < monsters.Length; i++)
         {
-            int index = Random.Range(1, monsters.Length + 1);
-            if (i == index) monsters[i].SetActive(true);
-            else monsters[i].SetActive(false);
+            int index = Random.Range(0, monsters.Length + 1);
+            if (i == index)
+            {
+                monsters[i].SetActive(true);
+                Debug.Log("oi");
+            }
+            if(index != i)
+            {
+
+            }
+            
         }
     }
 
@@ -64,7 +71,9 @@ public class Sorting : MonoBehaviour
 
     private void OnEnable()
     {
-        if(monsters.Length > 0) SortingOneObject();
+        
+        if (noCollider) SortingOneObject();
+        
     }
 }
 
