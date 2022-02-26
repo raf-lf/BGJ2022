@@ -19,8 +19,8 @@ public class RoomIllusions : MonoBehaviour, IRoomComponent
     {
         connectedRoom = GetComponentInParent<Room>();
         illusionAnim = GetComponent<Animator>();
-        connectedRoom.onEntry += EnteredRoom;
-        connectedRoom.onExit += ExitedRoom;
+        connectedRoom.OnEntry += EnteredRoom;
+        connectedRoom.OnExit += ExitedRoom;
 
     }
 
