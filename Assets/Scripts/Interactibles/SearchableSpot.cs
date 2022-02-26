@@ -19,7 +19,8 @@ public class SearchableSpot : MouseTarget
 
         if (!alreadyUsed)
         { 
-            objectAnim.SetBool(parameterName, true);
+            if(objectAnim != null)
+                objectAnim.SetBool(parameterName, true);
             alreadyUsed = true;
             interactable = false;
 
@@ -55,7 +56,8 @@ public class SearchableSpot : MouseTarget
 
     public void ResetObject()
     {
-        objectAnim.SetBool(parameterName, false);
+        if (objectAnim != null)
+            objectAnim.SetBool(parameterName, false);
         alreadyUsed = false;
         interactable = true;
     }
