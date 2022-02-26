@@ -26,4 +26,15 @@ public class RoomToCreatureMovementManager : MonoBehaviour
 
         return atualRoom.adjacentRooms[Random.Range(0, atualRoom.adjacentRooms.Count)];
     }
+
+    [ContextMenu("Update Rooms")]
+    public void UpdateRooms()
+    {
+        room.Clear();
+
+        foreach(RoomCreatureMovement r in gameObject.GetComponentsInChildren<RoomCreatureMovement>())
+        {
+            room.Add(r);
+        }
+    }
 }

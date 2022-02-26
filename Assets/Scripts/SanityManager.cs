@@ -119,4 +119,9 @@ public class SanityManager : MonoBehaviour
 
         UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
     }
+
+    public float SanityMax
+    {
+        get { return sanityMax; }
+    }
 }

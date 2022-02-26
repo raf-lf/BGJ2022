@@ -10,11 +10,11 @@ public class Window : MouseTarget
     public float closedTime;
     public float closedTimeVariance;
     [SerializeField]
-    private float timer;
+    //private float timer;
 
     private void Start()
     {
-        timer = closedTime + Random.Range(-closedTimeVariance, closedTimeVariance);
+        //timer = closedTime + Random.Range(-closedTimeVariance, closedTimeVariance);
         objectAnim.SetBool("open", false);
         interactable = false;
     }
@@ -29,7 +29,7 @@ public class Window : MouseTarget
     public void CloseWindow()
     {
         isOpen = false;
-        timer = closedTime + Random.Range(-closedTimeVariance, closedTimeVariance);
+        //timer = closedTime + Random.Range(-closedTimeVariance, closedTimeVariance);
         objectAnim.SetBool("open", false);
         interactable = false;
 
@@ -47,14 +47,14 @@ public class Window : MouseTarget
     {
         base.Update();
 
-        if(!locked)
-        {
-            if (timer <= 0)
-            {
-                OpenWindow();
-            }
-            else
-                timer = Mathf.Clamp(timer - Time.deltaTime, 0, Mathf.Infinity);
-        }
+        //if(!locked)
+        //{
+        //    if (timer <= 0)
+        //    {
+        //        OpenWindow();
+        //    }
+        //    else
+        //        timer = Mathf.Clamp(timer - Time.deltaTime, 0, Mathf.Infinity);
+        //}
     }
 }
