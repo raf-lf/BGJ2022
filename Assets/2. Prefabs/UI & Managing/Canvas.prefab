@@ -360,6 +360,11 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 4227ac19e6909834db9e8cd1ce15c595, type: 3}
   - {fileID: 21300000, guid: 308c6ab6a3eea1446ada939585ed76ae, type: 3}
   - {fileID: 21300000, guid: 2dece26a13950fa4cb345394210e297e, type: 3}
+  trinketSfx:
+  - {fileID: 8300000, guid: d150b0111135f2b449f42b65c6b800fd, type: 3}
+  - {fileID: 8300000, guid: a426ff1851e1d9347bc6fba9a7944b59, type: 3}
+  - {fileID: 8300000, guid: fc9e15f502c4696448a09cd1d47f2467, type: 3}
+  - {fileID: 8300000, guid: 87ec81996dbb1d24397c79f41fe0038a, type: 3}
 --- !u!95 &7621662827690051987
 Animator:
   serializedVersion: 3

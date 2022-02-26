@@ -27,9 +27,9 @@ public class Room : MonoBehaviour
 
 
     public delegate void EntryDelegate();
-    public static event EntryDelegate OnEntry;
+    public event EntryDelegate OnEntry;
     public delegate void ExitDelegate();
-    public static event ExitDelegate OnExit;
+    public event ExitDelegate OnExit;
 
     private void Awake()
     {

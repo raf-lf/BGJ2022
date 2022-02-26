@@ -9,6 +9,7 @@ public class Candle : MouseTarget
     private float maxLife;
     public float depletionRate;
     public ParticleSystem vfxRekindle;
+    public PlaySfx sfxRekindle;
 
     [Header("Sizes")]
     public float area = 10;
@@ -44,6 +45,7 @@ public class Candle : MouseTarget
 
         if (InventoryManager.scriptInventory.SpendCharge())
         {
+            sfxRekindle.PlayInspectorSfx();
             vfxRekindle.Play();
             LifeChange(maxLife);
         }

@@ -9,7 +9,7 @@ public class SpawnMonsters : MonoBehaviour
 
     [Header("Monster Spawn Atributes")]
     public List<GameObject> monster;
-
+    /*
     private void OnEnable()
     {
         Room.OnEntry += ShowMonsters;
@@ -21,6 +21,7 @@ public class SpawnMonsters : MonoBehaviour
         Room.OnEntry -= ShowMonsters;
         Room.OnExit -= ShowMonsters;
     }
+    */
 
     public void ShowMonsters()
     {

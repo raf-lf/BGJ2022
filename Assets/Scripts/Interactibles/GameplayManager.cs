@@ -32,7 +32,6 @@ public class GameplayManager : MonoBehaviour
     public bool itemSpawned;
 
     [Header("Other")]
-    public PlaySfx spawnSfx;
     [SerializeField]
     private List<SearchableSpot> finalValidSpots = new List<SearchableSpot>();
     [SerializeField]
@@ -172,7 +171,6 @@ public class GameplayManager : MonoBehaviour
 
                 chosenSpot.itemInside = true;
 
-                spawnSfx.PlayInspectorSfx();
                 itemsAlreadySpawned++;
 
                 spotsAlreadyUsed.Add(chosenSpot);

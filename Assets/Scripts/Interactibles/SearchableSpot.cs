@@ -12,6 +12,7 @@ public class SearchableSpot : MouseTarget
     public float delay = .25f;
     public ParticleSystem vfxItem;
     public ParticleSystem vfxNoItem;
+    public PlaySfx sfxInteract;
 
     public override void Interact()
     {
@@ -21,6 +22,9 @@ public class SearchableSpot : MouseTarget
         { 
             if(objectAnim != null)
                 objectAnim.SetBool(parameterName, true);
+
+            sfxInteract.PlayInspectorSfx();
+
             alreadyUsed = true;
             interactable = false;
 

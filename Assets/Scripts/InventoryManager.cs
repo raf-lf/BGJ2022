@@ -17,6 +17,7 @@ public class InventoryManager : MonoBehaviour
     public TextMeshProUGUI[] itemQty = new TextMeshProUGUI[2];
     public Image trinketPopup;
     public Sprite[] trinketSprites = new Sprite[0];
+    public AudioClip[] trinketSfx = new AudioClip[0];
 
 
     public void Awake()
@@ -46,7 +47,9 @@ public class InventoryManager : MonoBehaviour
 
     public void AddTrinket(int qty)
     {
-        trinketPopup.sprite = trinketSprites[Random.Range(0, trinketSprites.Length)];
+        int roll = Random.Range(0, trinketSprites.Length);
+        trinketPopup.sprite = trinketSprites[roll];
+        AudioManager.scriptAudio.PlaySfx(trinketSfx[roll], 1, new Vector2(.8f, 1.2f),AudioManager.scriptAudio.sfxSource);
 
         ChangeItem(0,qty);
 

@@ -6,9 +6,12 @@ public class Window : MouseTarget
 {
     [Header("Window")]
     public bool isOpen;
-    public bool locked;
-    public float closedTime;
-    public float closedTimeVariance;
+    public float lockedTimeAfterClosing = 20;
+    public float lockedTimer;
+
+    public PlaySfx sfxOpen;
+    public PlaySfx sfxClose;
+
     [SerializeField]
     //private float timer;
 
@@ -29,9 +32,10 @@ public class Window : MouseTarget
     public void CloseWindow()
     {
         isOpen = false;
-        //timer = closedTime + Random.Range(-closedTimeVariance, closedTimeVariance);
+        lockedTimer = lockedTimeAfterClosing;
         objectAnim.SetBool("open", false);
         interactable = false;
+        sfxClose.PlayInspectorSfx();
 
     }
 
@@ -40,6 +44,7 @@ public class Window : MouseTarget
         isOpen = true;
         objectAnim.SetBool("open", true);
         interactable = true;
+        sfxOpen.PlayInspectorSfx();
 
     }
 
@@ -47,14 +52,7 @@ public class Window : MouseTarget
     {
         base.Update();
 
-        //if(!locked)
-        //{
-        //    if (timer <= 0)
-        //    {
-        //        OpenWindow();
-        //    }
-        //    else
-        //        timer = Mathf.Clamp(timer - Time.deltaTime, 0, Mathf.Infinity);
-        //}
+        if(lockedTimer > 0)
+            lockedTimer = Mathf.Clamp(lockedTimer - Time.deltaTime, 0, Mathf.Infinity);
     }
 }

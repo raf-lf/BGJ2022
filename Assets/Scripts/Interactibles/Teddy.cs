@@ -18,6 +18,7 @@ public class Teddy : MouseTarget
 
     public bool hugging;
 
+    [Header("Components")]
     public Renderer teddyRenderer;
     public Texture[] teddySprites = new Texture[3];
     public Texture[] playerHuggingSprites = new Texture[3];
@@ -39,7 +40,10 @@ public class Teddy : MouseTarget
 
     public void Hug(bool on)
     {
-        if(!hugging)
+        objectAnim.SetBool("hug", on);
+        objectAnim.SetInteger("decay", decayState);
+
+        if (!hugging)
             playerNormalSprite = PlayerMovement.Player.GetComponentInChildren<Renderer>().material.mainTexture;
 
         hugging = on;
@@ -49,10 +53,14 @@ public class Teddy : MouseTarget
         PlayerMovement.PlayerControls = !on;
         teddyRenderer.enabled = !on;
 
-        if (decayState ==2)
+        if (decayState == 2)
+        {
             SanityManager.sanityScript.curse = on;
+        }
         else
+        {
             SanityManager.sanityScript.recovery = on;
+        }
 
         if (on)
         {
@@ -67,7 +75,8 @@ public class Teddy : MouseTarget
         }
         else
             PlayerMovement.Player.GetComponentInChildren<Renderer>().material.mainTexture = playerNormalSprite;
-        
+
+
 
     }
 

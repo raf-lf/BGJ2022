@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3211094471188175674}
-  - component: {fileID: 362205737241866753}
   - component: {fileID: 4836845993537295135}
+  - component: {fileID: 362205737241866753}
   m_Layer: 0
   m_Name: Audio Source
   m_TagString: Untagged
@@ -32,6 +32,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4836845993537295135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7853365801446903477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaefd59ca4ee42b4890da4a6a1a7f92c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 362205737241866753}
+  playOnStart: 0
+  clips:
+  - {fileID: 0}
+  volume: 1
+  pitchVariance: {x: 1, y: 1}
 --- !u!82 &362205737241866753
 AudioSource:
   m_ObjectHideFlags: 0
@@ -128,21 +146,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &4836845993537295135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7853365801446903477}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eaefd59ca4ee42b4890da4a6a1a7f92c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  source: {fileID: 362205737241866753}
-  playOnStart: 0
-  clips:
-  - {fileID: 0}
-  volume: 1
-  pitchVariance: {x: 1, y: 1}
