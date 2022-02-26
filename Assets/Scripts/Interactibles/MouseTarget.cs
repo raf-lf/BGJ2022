@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MouseTarget : MonoBehaviour
 {
-    [SerializeField]
     protected Animator shaderAnim;
     [SerializeField]
     protected Animator objectAnim;
@@ -18,6 +17,7 @@ public class MouseTarget : MonoBehaviour
     protected virtual void Awake()
     {
         //rend = GetComponent<Renderer>();
+        shaderAnim = GetComponent<Animator>();
     }
 
     private void Start()
