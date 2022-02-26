@@ -11,6 +11,14 @@ PrefabInstance:
       propertyPath: sanityValue
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2027101286640049081, guid: 9d696effb50f05a4e9014e068dbc713f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.7499995
+      objectReference: {fileID: 0}
+    - target: {fileID: 5288435374697934779, guid: 9d696effb50f05a4e9014e068dbc713f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.7499993
+      objectReference: {fileID: 0}
     - target: {fileID: 5288435374697934789, guid: 9d696effb50f05a4e9014e068dbc713f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -107,6 +115,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 7d97e62ea96a741458a4ae10b81d6297, type: 2}
+    - target: {fileID: 6005815138544952355, guid: 9d696effb50f05a4e9014e068dbc713f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.7499993
+      objectReference: {fileID: 0}
     - target: {fileID: 6619801167056863581, guid: 9d696effb50f05a4e9014e068dbc713f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.1700011
@@ -151,6 +163,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ec772fc2966e3f54d8bdcf3a49aae60f, type: 2}
+    - target: {fileID: 7682664564379626537, guid: 9d696effb50f05a4e9014e068dbc713f, type: 3}
+      propertyPath: animState
+      value: IdleWalker
+      objectReference: {fileID: 0}
     - target: {fileID: 8485694519782939114, guid: 9d696effb50f05a4e9014e068dbc713f, type: 3}
       propertyPath: m_IsActive
       value: 1
