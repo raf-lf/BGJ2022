@@ -7,9 +7,9 @@ public class RoomEntry : MonoBehaviour
 {
     private Room connectedRoom;
 
-    private void Awake()
+    private void Start()
     {
-        connectedRoom = GetComponentInParent<Room>();        
+        connectedRoom = GetComponentInParent<Room>();
     }
 
     private void OnTriggerEnter(Collider other)

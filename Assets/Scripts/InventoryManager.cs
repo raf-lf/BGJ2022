@@ -72,6 +72,7 @@ public class InventoryManager : MonoBehaviour
     {
         itemQty[0].text = trinkets.ToString();
         itemQty[1].text = candleCharges.ToString();
+        FindObjectOfType<RitualCircle>().UpdateItems();
 
     }
 }
