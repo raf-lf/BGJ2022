@@ -1921,7 +1921,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3593974965985669201}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -3898,8 +3898,8 @@ MonoBehaviour:
   curse: 0
   recovery: 0
   illusionModifier: 3
-  curseModifier: 5
-  recoveryModifier: -5
+  curseModifier: 10
+  recoveryModifier: -10
   sanity: 100
   sanityDecay: 1
   sanityThreshold:

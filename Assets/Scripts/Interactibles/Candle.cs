@@ -13,7 +13,7 @@ public class Candle : MouseTarget
 
     [Header("Sizes")]
     public float area = 10;
-    public float lightRadiusRatio = 5;
+    //public float lightRadiusRatio = 5;
     public float lightIntensityRatio = 1;
     public float ringEmissionRatio = 20;
     public float haloSizeRatio = 1;
@@ -68,7 +68,7 @@ public class Candle : MouseTarget
         //candleLight.intensity = maxLightIntensity * (life / maxLife);
         lightCollider.radius = area * (life / maxLife);
         candleLight.intensity = (area * lightIntensityRatio) * (life / maxLife);
-        candleLight.range = (area * lightRadiusRatio) * (life / maxLife);
+        //candleLight.range = (area * lightRadiusRatio) * (life / maxLife);
         psRadiusShape.radius = area * (life / maxLife);
         psRadiusEmission.rateOverTime = (area * ringEmissionRatio) * (life / maxLife);
         psHaloMain.startSize = (area * haloSizeRatio) * (life / maxLife);

@@ -14675,9 +14675,8 @@ MonoBehaviour:
   interactable: 1
   item: {fileID: 0}
   isOpen: 0
-  locked: 0
-  closedTime: 30
-  closedTimeVariance: 10
+  lockedTimeAfterClosing: 60
+  lockedTimer: 0
   sfxOpen: {fileID: 8018264159588534729}
   sfxClose: {fileID: 4409436558579214373}
 --- !u!65 &6409128522594928383
