@@ -8,32 +8,28 @@ using TMPro;
 public class InterfaceAnimationFunctions : MonoBehaviour
 {
     [Header("Game Over Screens")]
-    public Sprite winScreen;
+    public Sprite[] winScreen;
     public Sprite looseScreen;
+    private int winScreenIndex;
 
     [Header("Game Over Atributes")]
     public Animator anim;
     public Image bg;
+    public Image bg2;
     public TMP_Text text;
 
     private void Start()
     {
         ChangeBackground();
         PlayAnimation(GameOverManager.Condition);
+        winScreenIndex = 0;
     }
-    
+
     public void ChangeBackground()
     {
-        switch (GameOverManager.Condition)
+        if(GameOverManager.Condition == "Lose")
         {
-            default:
-            case "Win":
-                bg.sprite = winScreen;
-                break;
-
-            case "Lose":
                 bg.sprite = looseScreen;
-                break;
         }
 
         text.text += GameOverManager.Condition;
@@ -47,5 +43,18 @@ public class InterfaceAnimationFunctions : MonoBehaviour
     public void PlayAnimation(string animName)
     {
         anim.Play(animName);
+    }
+
+    public void ChangeSprite()
+    {
+        if (GameOverManager.Condition == "Win")
+        {
+            bg.sprite = winScreen[winScreenIndex];
+
+            if (winScreenIndex < winScreen.Length)
+            {
+                winScreenIndex += 1;
+            }
+        }
     }
 }
