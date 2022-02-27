@@ -21,4 +21,9 @@ public class MenuOptions : MonoBehaviour
         AudioManager.volumeCurrentBgm = bgmSlider.value;
 
     }
+
+    private void Update()
+    {
+        UpdateVolumes();
+    }
 }

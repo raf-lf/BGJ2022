@@ -49,7 +49,7 @@ public class AudioManager : MonoBehaviour
         if (source != null)
             usedSource = source;
 
-        volumeCurrentSfx = volume;
+        volumeSfxModifier = volume;
 
         usedSource.volume = ReturnSfxVolume();
         usedSource.pitch = Random.Range(pitchVariance.x, pitchVariance.y);
@@ -59,7 +59,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlayBgm(AudioClip music, float volume)
     {
-        volumeCurrentBgm = volume;
+        volumeBgmModifier = volume;
         bgmSource.volume = ReturnBgmVolume();
         bgmSource.clip = music;
         bgmSource.Play();
