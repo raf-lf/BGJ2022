@@ -829,37 +829,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 891932194270961097, guid: e5fbfc0db7781fe438033cf30bb01e0c, type: 3}
-      propertyPath: m_Range
-      value: 1000
+    - target: {fileID: 2857151597028049753, guid: e5fbfc0db7781fe438033cf30bb01e0c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7999998
       objectReference: {fileID: 0}
-    - target: {fileID: 891932194270961097, guid: e5fbfc0db7781fe438033cf30bb01e0c, type: 3}
-      propertyPath: m_Color.a
-      value: 1
+    - target: {fileID: 3436564748886434267, guid: e5fbfc0db7781fe438033cf30bb01e0c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7999998
       objectReference: {fileID: 0}
-    - target: {fileID: 891932194270961097, guid: e5fbfc0db7781fe438033cf30bb01e0c, type: 3}
-      propertyPath: m_Intensity
-      value: 25
+    - target: {fileID: 3739823814990498450, guid: e5fbfc0db7781fe438033cf30bb01e0c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
       objectReference: {fileID: 0}
-    - target: {fileID: 2196694256026832048, guid: e5fbfc0db7781fe438033cf30bb01e0c, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 5a124e3d487b577468df8070e42b85de, type: 2}
-    - target: {fileID: 3993918259152382342, guid: e5fbfc0db7781fe438033cf30bb01e0c, type: 3}
-      propertyPath: EmissionModule.enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4345861239096405053, guid: e5fbfc0db7781fe438033cf30bb01e0c, type: 3}
-      propertyPath: EmissionModule.enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4345861239096405053, guid: e5fbfc0db7781fe438033cf30bb01e0c, type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 4345861239096405053, guid: e5fbfc0db7781fe438033cf30bb01e0c, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.a
-      value: 0.11764706
+    - target: {fileID: 4587345318276904456, guid: e5fbfc0db7781fe438033cf30bb01e0c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7999998
       objectReference: {fileID: 0}
     - target: {fileID: 5989798719973586199, guid: e5fbfc0db7781fe438033cf30bb01e0c, type: 3}
       propertyPath: m_RootOrder
@@ -909,29 +893,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ritual Circle
       objectReference: {fileID: 0}
-    - target: {fileID: 6336822538888110553, guid: e5fbfc0db7781fe438033cf30bb01e0c, type: 3}
-      propertyPath: EmissionModule.enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6438115312522396508, guid: e5fbfc0db7781fe438033cf30bb01e0c, type: 3}
-      propertyPath: EmissionModule.enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6760521719346411389, guid: e5fbfc0db7781fe438033cf30bb01e0c, type: 3}
-      propertyPath: EmissionModule.enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7520611860100468824, guid: e5fbfc0db7781fe438033cf30bb01e0c, type: 3}
-      propertyPath: EmissionModule.enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7559820131283500355, guid: e5fbfc0db7781fe438033cf30bb01e0c, type: 3}
-      propertyPath: EmissionModule.enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9183857801382912421, guid: e5fbfc0db7781fe438033cf30bb01e0c, type: 3}
-      propertyPath: EmissionModule.enabled
-      value: 1
+    - target: {fileID: 6535325249931604328, guid: e5fbfc0db7781fe438033cf30bb01e0c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7999998
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5fbfc0db7781fe438033cf30bb01e0c, type: 3}

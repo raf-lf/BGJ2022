@@ -5,12 +5,14 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager scriptAudio;
+    
+    public static float volumeCurrentBgm = .7f;
+    public static float volumeCurrentSfx = .7f;
+
     public static float volumeSfxModifier = 1;
     public static float volumeBgmModifier = 1;
     public float volumeSfxFadeModifier = 1;
     public float volumeBgmFadeModifier = 1;
-    public static float volumeCurrentBgm = 1;
-    public static float volumeCurrentSfx = 1;
     public AudioSource sfxSource;
     public AudioSource bgmSource;
 
