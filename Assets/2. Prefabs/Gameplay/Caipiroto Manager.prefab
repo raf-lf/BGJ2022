@@ -46533,7 +46533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4dace93b94d9a46a2e9582524cfcc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnCountdown: 600
+  spawnCountdown: 300
   spawnTimer: 0
   windowsMultiplier: 0
   caipiroto: {fileID: 7071989023293120202}

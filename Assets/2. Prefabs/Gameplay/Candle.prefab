@@ -4949,7 +4949,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 5
+  m_Radius: 7.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1322209313418530492
 GameObject:
@@ -9807,7 +9807,7 @@ GameObject:
   - component: {fileID: 3942391970831637315}
   - component: {fileID: 8531035920468270917}
   m_Layer: 0
-  m_Name: Light
+  m_Name: Candle Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9821,7 +9821,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1819083049784608399}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 895407426388294744}
@@ -9836,13 +9836,13 @@ Light:
   m_GameObject: {fileID: 1819083049784608399}
   m_Enabled: 1
   serializedVersion: 10
-  m_Type: 0
+  m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.5191529, b: 0.0047169924, a: 1}
-  m_Intensity: 100
-  m_Range: 620.08
-  m_SpotAngle: 179
-  m_InnerSpotAngle: 179
+  m_Intensity: 20
+  m_Range: 10
+  m_SpotAngle: 60
+  m_InnerSpotAngle: 50
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -34162,7 +34162,7 @@ GameObject:
   - component: {fileID: 1031474096222877146}
   - component: {fileID: 1409237235113315759}
   m_Layer: 6
-  m_Name: Mechanics
+  m_Name: Candle Mechanics
   m_TagString: Interagivel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34213,9 +34213,8 @@ MonoBehaviour:
   depletionRate: 1
   vfxRekindle: {fileID: 4266516549211200551}
   sfxRekindle: {fileID: 1735432960319166193}
-  area: 5
-  lightRadiusRatio: 1000
-  lightIntensityRatio: 20
+  area: 7.5
+  lightIntensityRatio: 5
   ringEmissionRatio: 20
   haloSizeRatio: 3.25
   sizePower: 0.3
@@ -34405,7 +34404,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5265067647996407476
 Transform:
   m_ObjectHideFlags: 0
