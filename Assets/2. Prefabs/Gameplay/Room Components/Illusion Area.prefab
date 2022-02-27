@@ -9662,7 +9662,7 @@ MonoBehaviour:
   illusionActive: 0
   illusionCountdown: 20
   illusionCountdownVariance: 5
-  illusionTimer: 0
+  illusionTimer: 20
 --- !u!198 &6567102021776805461
 ParticleSystem:
   m_ObjectHideFlags: 0
