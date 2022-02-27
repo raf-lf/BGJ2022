@@ -58848,9 +58848,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5989798719973586199}
   - component: {fileID: 8918413054058886927}
-  - component: {fileID: 383893442008139194}
   - component: {fileID: 2890413167993726789}
   - component: {fileID: 392974315692262166}
+  - component: {fileID: 1112807450491995164}
   m_Layer: 2
   m_Name: Ritual Circle
   m_TagString: Untagged
@@ -58900,19 +58900,6 @@ MonoBehaviour:
   - {fileID: 423171783974465333}
   - {fileID: 683663378345176673}
   - {fileID: 1807206056210067206}
---- !u!135 &383893442008139194
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5989798719973586408}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 3
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2890413167993726789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58944,6 +58931,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!136 &1112807450491995164
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5989798719973586408}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 3
+  m_Height: 15
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6064569563630248294
 GameObject:
   m_ObjectHideFlags: 0
