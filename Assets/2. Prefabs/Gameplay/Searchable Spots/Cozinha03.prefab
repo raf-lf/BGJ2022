@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7513426963002197974}
   - component: {fileID: 4218611100330389172}
   m_Layer: 0
-  m_Name: Cozinha02
+  m_Name: Cozinha06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 320464422821511221}
   m_LocalRotation: {x: -0.5000006, y: -0.49999952, z: -0.4999996, w: 0.5000004}
-  m_LocalPosition: {x: -0.33563006, y: 0.5520121, z: 3.168}
+  m_LocalPosition: {x: 0.994, y: 0.5520121, z: 3.168}
   m_LocalScale: {x: 75, y: 74.99998, z: 74.99998}
   m_Children: []
   m_Father: {fileID: 4525726208024367660}
@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 7311643061306395136}
   - component: {fileID: 1106737032480923940}
   m_Layer: 0
-  m_Name: Cozinha01
+  m_Name: Cozinha05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -160,7 +160,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5645709945277427847}
   m_LocalRotation: {x: -0.5000006, y: -0.49999952, z: -0.4999996, w: 0.5000004}
-  m_LocalPosition: {x: -0.33176494, y: 0.5520121, z: 3.168}
+  m_LocalPosition: {x: -1.747, y: 0.5520121, z: 3.168}
   m_LocalScale: {x: 75, y: 74.99998, z: 74.99998}
   m_Children: []
   m_Father: {fileID: 4525726208024367660}
