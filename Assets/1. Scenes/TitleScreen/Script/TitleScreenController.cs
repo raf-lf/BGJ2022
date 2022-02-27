@@ -27,6 +27,9 @@ public class TitleScreenController : MonoBehaviour
 
     private void Start()
     {
+        SanityManager.lightLevel = 0;
+        PlayerMovement.PlayerControls = true;
+
         ChangeTitleScreenState(TitleScreenState.Entry);
     }
 
