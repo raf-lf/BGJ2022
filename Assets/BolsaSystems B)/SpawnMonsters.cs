@@ -49,13 +49,12 @@ public class SpawnMonsters : MonoBehaviour
         UpdateRoomCreature();
         GetRoomMonsters();
 
-        float howManyMonstersWillSpawn = (SanityManager.sanityScript.SanityMax - SanityManager.sanityScript.sanity - SanityManager.sanityScript.SanityMax/10*9) * monsterSpawnMultiplier;
+        float howManyMonstersWillSpawn = (1 - SanityManager.sanityScript.sanity / SanityManager.sanityScript.SanityMax) * monster.Count;
+        Debug.Log(howManyMonstersWillSpawn);
         int spawnCounter = 0;
 
-        while(spawnCounter < howManyMonstersWillSpawn)
+        for (int i = 0; i < monster.Count; i++)
         {
-            for (int i = 0; i < monster.Count; i++)
-            {
                 if (Random.Range(0, 100) < 50)
                 {
                     monster[i].SetActive(true);
@@ -65,8 +64,8 @@ public class SpawnMonsters : MonoBehaviour
                 {
                     monster[i].SetActive(false);
                 }
-            }
         }
+            Debug.Log(spawnCounter);
     }
 
     [ContextMenu("Update Rooms Creature")]
