@@ -637,9 +637,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1492173921776152487, guid: 68b2ccd1c70a6ce4c9d8e8d7a26a7517, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2598775463863319203, guid: 68b2ccd1c70a6ce4c9d8e8d7a26a7517, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.24
+      value: -0.02
       objectReference: {fileID: 0}
     - target: {fileID: 2598775463863319203, guid: 68b2ccd1c70a6ce4c9d8e8d7a26a7517, type: 3}
       propertyPath: m_LocalPosition.y
@@ -653,6 +657,22 @@ PrefabInstance:
       propertyPath: objectAnim
       value: 
       objectReference: {fileID: 8897388587832463821}
+    - target: {fileID: 4504399615645958085, guid: 68b2ccd1c70a6ce4c9d8e8d7a26a7517, type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 4504399615645958085, guid: 68b2ccd1c70a6ce4c9d8e8d7a26a7517, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4504399615645958085, guid: 68b2ccd1c70a6ce4c9d8e8d7a26a7517, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4504399615645958085, guid: 68b2ccd1c70a6ce4c9d8e8d7a26a7517, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 5989798718999495314, guid: 68b2ccd1c70a6ce4c9d8e8d7a26a7517, type: 3}
       propertyPath: m_LocalScale.x
       value: 4.9779
