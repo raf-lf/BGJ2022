@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class SetFalse : MonoBehaviour
 {
-    public void SettingFalse()
+    Animator animator;
+    private void Start() { 
+
+    }
+    private void OnDisable()
     {
-        gameObject.SetActive(false);
+     
     }
 
 }

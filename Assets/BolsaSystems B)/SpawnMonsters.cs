@@ -75,7 +75,9 @@ public class SpawnMonsters : MonoBehaviour
         if(roomCreature.Count > 0)
             roomCreature.Clear();
 
-        foreach(RoomCreatures g in gameObject.GetComponentsInChildren<RoomCreatures>())
+        RoomCreatures[] carlos = gameObject.GetComponentsInChildren<RoomCreatures>();
+
+        foreach (RoomCreatures g in carlos)
         {
             roomCreature.Add(g);
         }

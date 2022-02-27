@@ -8,6 +8,7 @@ TagManager:
   - RoomCollider
   - Spot
   - Caipiroto
+  - Monsters
   layers:
   - Default
   - TransparentFX

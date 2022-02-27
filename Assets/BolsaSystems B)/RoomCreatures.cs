@@ -10,11 +10,13 @@ public class RoomCreatures : MonoBehaviour
     [ContextMenu("Update Mosnters")]
     public void UpdateMonsters()
     {
-        monster.Clear();
+        if(monster.Count>0) monster.Clear();
 
-        foreach(GameObject g in GetComponentsInChildren<GameObject>())
+        GameObject[] samuel = gameObject.GetComponentsInChildren<GameObject>();
+
+        foreach (GameObject g in samuel)
         {
-            if (g.CompareTag("Monster"))
+            if (g.CompareTag("Monsters"))
             {
                 monster.Add(g);
             }
