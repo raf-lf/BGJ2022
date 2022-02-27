@@ -166,7 +166,7 @@ MonoBehaviour:
   changeMaterial: 0
   interactable: 1
   item: {fileID: 0}
-  life: 300
+  life: 180
   lifeThreshold: 0.5
   lifeDecay: 1
   decayState: 0
