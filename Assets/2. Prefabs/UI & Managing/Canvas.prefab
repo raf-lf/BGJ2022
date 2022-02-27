@@ -308,6 +308,7 @@ GameObject:
   - component: {fileID: 8182758236512472173}
   - component: {fileID: 2934284267256750033}
   - component: {fileID: 8110031605570445620}
+  - component: {fileID: 5046900775662937790}
   m_Layer: 5
   m_Name: Overlay
   m_TagString: Untagged
@@ -374,6 +375,18 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!114 &5046900775662937790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589303863719285477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da66d0498b566fa4d9451ec1b58a74d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &595919332650203927
 GameObject:
   m_ObjectHideFlags: 0
@@ -3911,6 +3924,7 @@ MonoBehaviour:
   evilEyeAnim: {fileID: 4075469519948727633}
   lightMeterAnim: {fileID: 7879282057710381080}
   sfxLoop: {fileID: 604940325955072839}
+  overlayAnimator: {fileID: 2934284267256750033}
 --- !u!222 &7046607872877615882
 CanvasRenderer:
   m_ObjectHideFlags: 0

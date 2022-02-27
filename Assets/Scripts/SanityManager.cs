@@ -34,6 +34,7 @@ public class SanityManager : MonoBehaviour
     public Animator evilEyeAnim;
     public Animator lightMeterAnim;
     public AudioSource sfxLoop;
+    public Animator overlayAnimator;
 
     private void Awake()
     {
@@ -111,13 +112,21 @@ public class SanityManager : MonoBehaviour
 
     public void GameOver()
     {
+        overlayAnimator.SetTrigger("gameOver");
         gameOverFlag = true;
         PlayerMovement.PlayerControls = false;
         GameOverManager.SetGameOverCondition("Lose");
 
+        Invoke(nameof(ChangeSceneGameOver), 2f);
         // Make the animations of Players Crazy;
 
+    }
+
+    public void ChangeSceneGameOver()
+    {
+        PlayerMovement.PlayerControls = true;
         UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
+
     }
 
     public float SanityMax
