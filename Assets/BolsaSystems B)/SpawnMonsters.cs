@@ -55,17 +55,20 @@ public class SpawnMonsters : MonoBehaviour
 
         for (int i = 0; i < monster.Count; i++)
         {
-                if (Random.Range(0, 100) < 50)
+            if (Random.Range(0, 100) < 50)
+            {
+                monster[i].SetActive(true);
+                spawnCounter += 1;
+                if (spawnCounter >= howManyMonstersWillSpawn)
                 {
-                    monster[i].SetActive(true);
-                    spawnCounter += 1;
+                    break;
                 }
-                else
-                {
-                    monster[i].SetActive(false);
-                }
+            }
+            else
+            {
+                monster[i].SetActive(false);
+            }
         }
-            Debug.Log(spawnCounter);
     }
 
     [ContextMenu("Update Rooms Creature")]
