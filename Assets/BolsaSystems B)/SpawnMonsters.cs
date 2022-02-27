@@ -5,34 +5,58 @@ using UnityEngine;
 public class SpawnMonsters : MonoBehaviour
 {
     [Header("Monster Spawn Configuration")]
-    public float monsterSpawnMultiplier;
+    [Range(0.1f, 2f)]public float monsterSpawnMultiplier;
 
     [Header("Monster Spawn Atributes")]
+    public List<RoomCreatures> roomCreature;
     public List<GameObject> monster;
-    /*
+
     private void OnEnable()
     {
-        Room.OnEntry += ShowMonsters;
-        Room.OnExit += ShowMonsters;
+        RoomStateController.UpdateRoom += ShowMonsters;
     }
 
     private void OnDisable()
     {
-        Room.OnEntry -= ShowMonsters;
-        Room.OnExit -= ShowMonsters;
+        RoomStateController.UpdateRoom -= ShowMonsters;
     }
-    */
+
+    public void GetRoomMonsters()
+    {
+        int usedRoom = 0;
+
+        if(monster.Count > 0)
+            monster.Clear();
+
+        RoomStateController.Room atualRoom = RoomStateController.roomStateController.GetRoom();
+
+        for (int i = 0; i < roomCreature.Count; i++)
+        {
+            if(atualRoom == roomCreature[i].roomState)
+            {
+                usedRoom = i;
+            }
+        }
+
+        for (int i = 0; i < roomCreature[usedRoom].monster.Count; i++)
+        {
+            monster.Add(roomCreature[usedRoom].monster[i]);
+        }
+    }
 
     public void ShowMonsters()
     {
-        float howManyMonstersWillSpawn = (SanityManager.sanityScript.SanityMax - SanityManager.sanityScript.sanity) * monsterSpawnMultiplier;
+        UpdateRoomCreature();
+        GetRoomMonsters();
+
+        float howManyMonstersWillSpawn = (SanityManager.sanityScript.SanityMax - SanityManager.sanityScript.sanity - SanityManager.sanityScript.SanityMax/10*9) * monsterSpawnMultiplier;
         int spawnCounter = 0;
 
-        for (int i = 0; i < monster.Count; i++)
+        while(spawnCounter < howManyMonstersWillSpawn)
         {
-            if(spawnCounter < howManyMonstersWillSpawn)
+            for (int i = 0; i < monster.Count; i++)
             {
-                if(Random.Range(0, 100) < 50)
+                if (Random.Range(0, 100) < 50)
                 {
                     monster[i].SetActive(true);
                     spawnCounter += 1;
@@ -45,14 +69,24 @@ public class SpawnMonsters : MonoBehaviour
         }
     }
 
-    [ContextMenu("Update Monsters")]
-    public void UpdateMonsters()
+    [ContextMenu("Update Rooms Creature")]
+    public void UpdateRoomCreature()
     {
-        monster.Clear();
+        if(roomCreature.Count > 0)
+            roomCreature.Clear();
 
-        foreach(GameObject g in gameObject.GetComponentsInChildren<GameObject>())
+        foreach(RoomCreatures g in gameObject.GetComponentsInChildren<RoomCreatures>())
         {
-            monster.Add(g);
+            roomCreature.Add(g);
+        }
+    }
+
+    public void UpdateAll()
+    {
+        UpdateRoomCreature();
+        foreach(RoomCreatures r in roomCreature)
+        {
+            r.UpdateMonsters();
         }
     }
 }
