@@ -5,13 +5,13 @@ using UnityEngine;
 public class MonsterLevel : MonoBehaviour
 {
  
-    public int monsterLevel;
+    int monsterLevel;
     public int timer;
-    [SerializeField] GameObject[] monsters;
-    public SanityManager sanityManager;
-    public float sanityValue;
-    public bool levelChanged;
-    bool IsIdle;
+    SanityManager sanityManager;
+    float sanityValue;
+    public Animator animator;
+
+
     void Awake()
     {
         StartCoroutine(InsanityCheck());        
@@ -25,7 +25,7 @@ public class MonsterLevel : MonoBehaviour
     // Update is called once per frame
     private void Start()
     {
-        sanityManager = FindObjectOfType<SanityManager>();        
+        sanityManager = FindObjectOfType<SanityManager>();
     }
     
     IEnumerator InsanityCheck()
@@ -48,44 +48,7 @@ public class MonsterLevel : MonoBehaviour
                 monsterLevel = 2;
             }
 
-            if (sanityValue > 98)
-            {
-                levelChanged = true;
-                levelChanged = false;
-            }
-            if (sanityValue > 66 && sanityValue < 68)
-            {
-                levelChanged = true;
-                levelChanged = false;
-            }
-            if (sanityValue > 33 && sanityValue < 35)
-            {
-                levelChanged = true;
-                levelChanged = false;
-            }
-
-            SelectMonsterLevel();
-
+            animator.SetInteger("level", monsterLevel);
         }
     }
-
-    void SelectMonsterLevel()
-    {
-
-        for (int i = 0; i < monsters.Length; i++)
-        {
-            if (i == monsterLevel)
-            {
-                monsters[i].SetActive(true);
-            }
-            if (i != monsterLevel)
-            {
-                monsters[i].SetActive(false);
-            }
-        }
-        
-        
-    }
-
-    
 }

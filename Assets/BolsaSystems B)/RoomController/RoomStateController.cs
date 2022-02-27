@@ -32,6 +32,11 @@ public class RoomStateController : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        atualRoom = roomConfig[atualCamera].roomState;
+    }
+
     public void ChangeRoom(SwitchCameraColliderConfig newRoom)
     {
         atualRoom = newRoom.roomConfig.roomState;
