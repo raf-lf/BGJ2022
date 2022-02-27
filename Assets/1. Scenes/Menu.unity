@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1670,29 +1670,32 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Categoria
+  m_text: 'Gabriel da Gama
 
-    Pessoas
-
-
-    Categoria
-
-    Pessoas
+    3D Art
 
 
-    Categoria
+    Rafael Farinha
 
-    Pessoas
-
-
-    Categoria
-
-    Pessoas
+    Game Design, Programming,
+    Sound Design, Tech Art
 
 
-    Categoria
+    Rafael Pedro
 
-    Pessoas'
+    2D Art, Game Design, Tech Art
+
+
+    Victoria
+    Motta
+
+    2D Art, Sound Design
+
+
+    Vitor Hugo Moreira
+
+    Game Design, Programming,
+    Music'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fe5f86e194a33484da85020d09a61d84, type: 2}
   m_sharedMaterial: {fileID: -8788974472929494780, guid: fe5f86e194a33484da85020d09a61d84, type: 2}

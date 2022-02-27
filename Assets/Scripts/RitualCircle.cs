@@ -11,12 +11,12 @@ public class RitualCircle : MonoBehaviour
     private void Start()
     {
         anim = GetComponent<Animator>();
-        
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Player") && ritualReady)
+        if (other.gameObject.CompareTag("Player") && ritualReady)
         {
             EndGame();
         }
@@ -24,8 +24,20 @@ public class RitualCircle : MonoBehaviour
 
     public void EndGame()
     {
+        GameOverManager.SetGameOverCondition("Win");
         PlayerMovement.PlayerControls = false;
         anim.SetInteger("stage", 2);
+        StartCoroutine(WinCoroutine());
+    }
+
+    public IEnumerator WinCoroutine()
+    {
+
+        yield return new WaitForSeconds(4.5f);
+        SanityManager.sanityScript.overlayAnimator.SetTrigger("win");
+        yield return new WaitForSeconds(2);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
+
     }
 
     public void UpdateItems()

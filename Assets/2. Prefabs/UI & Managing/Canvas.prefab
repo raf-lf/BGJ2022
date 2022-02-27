@@ -438,7 +438,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trinkets: 0
-  candleCharges: 3
+  candleCharges: 5
   itemAnim:
   - {fileID: 7155117925581096028}
   - {fileID: 4940852783066520592}
