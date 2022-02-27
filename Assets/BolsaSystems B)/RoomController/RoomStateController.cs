@@ -8,7 +8,7 @@ public class RoomStateController : MonoBehaviour
     public static event OnUpdateRoom UpdateRoom;
     public enum Room
     {
-        Quarto,
+        Quarto01,
         Sala01,
         Sala02,
         Cozinha,
@@ -16,7 +16,8 @@ public class RoomStateController : MonoBehaviour
         Corredor02,
         Banheiro,
         Sala03,
-        Cozinha02
+        Cozinha02,
+        Quarto02
     }
     public RoomConfig[] roomConfig;
     public static RoomStateController roomStateController;

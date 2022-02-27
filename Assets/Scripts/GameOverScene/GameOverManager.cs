@@ -4,7 +4,6 @@ using UnityEngine;
 
 public static class GameOverManager
 {
-    [Header("Game Over Atributes")]
     private static string gameOverCondition;
 
     public static void SetGameOverCondition(string gOType)
