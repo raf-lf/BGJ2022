@@ -32,6 +32,13 @@ public class PlayerMovement : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
+    private void FixedUpdate()
+    {
+        if(transform.position.y >1)
+        {
+            transform.position -= new Vector3(0, transform.position.y, 0); 
+        }
+    }
     private void Update()
     {
         DoMovement();
